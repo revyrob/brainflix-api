@@ -15,34 +15,49 @@ function HomePage() {
   //declare videoId with useParams()
   const { videoId } = useParams();
 
-  //get the list for the videos
-  useEffect(() => {
+  //const for getVideoList
+  const getVideoList = () => {
     axios
-      .get(`${REACT_APP_API_SERVER_URL}`)
+      .get(`${REACT_APP_API_SERVER_URL}/videos`)
       .then((response) => {
         setVideoList(response.data);
+        console.log(response.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  };
 
-  // switch the video in the video list to the video main
-  useEffect(() => {
+  //const videoId
+  const getMainVideo = () => {
     if (videoId !== undefined) {
       axios
-        .get(`${REACT_APP_API_SERVER_URL}${videoId}`)
+        .get(`${REACT_APP_API_SERVER_URL}/videos/${videoId}`)
         .then((response) => {
           setMainVideo(response.data);
         })
         .catch((err) => console.log(err));
-      //else statement to currently hardcode the videoId since this useEffect block is running bfore the setVideoList
+      // else statement to currently hardcode the videoId since this useEffect block is running bfore the setVideoList
     } else {
       axios
-        .get(`${REACT_APP_API_SERVER_URL}84e96018-4022-434e-80bf-000ce4cd12b8`)
+        .get(
+          `${REACT_APP_API_SERVER_URL}/videos/84e96018-4022-434e-80bf-000ce4cd12b8`
+        )
         .then((response) => {
           setMainVideo(response.data);
         })
         .catch((err) => console.log(err));
     }
+  };
+
+  //get the list for the videos
+  useEffect(() => {
+    //call getVideoList
+    getVideoList();
+  }, []);
+
+  // switch the video in the video list to the video main
+  useEffect(() => {
+    //call getMainVideo
+    getMainVideo();
   }, [videoId]);
 
   /*

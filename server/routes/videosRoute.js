@@ -39,17 +39,17 @@ router.get("/", (req, res) => {
 /*
  *Get single video by using id pararm
  */
-// router.get("/:id", (req, res) => {
-//   loadVideosData((err, videoData) => {
-//     if (err) {
-//       res.send("error getting video data");
-//     } else {
-//       const videos = JSON.parse(videoData);
-//       const foundVideo = videos.find((video) => video.id == req.params.id);
-//       res.json(foundVideo);
-//     }
-//   });
-// });
+router.get("/:id", (req, res) => {
+  loadVideosData((err, videoData) => {
+    if (err) {
+      res.send("error getting video data");
+    } else {
+      const videos = JSON.parse(videoData);
+      const foundVideo = videos.find((video) => video.id == req.params.id);
+      res.json(foundVideo);
+    }
+  });
+});
 
 /*
  *Post new upload
