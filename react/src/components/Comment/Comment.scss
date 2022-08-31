@@ -1,0 +1,51 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-light-sec;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: $color-dark-sec;
+    font-size: 0.8125rem;
+    @include desktop {
+        padding: 2rem 1rem 2rem 0;
+        font-size: 1rem;
+        font-size: 0.875rem;
+        border-top: 1px solid $color-light-sec;
+        border-bottom: none;
+    }
+    
+    &__wrapper {
+        width: 90%;
+        margin-right:1rem;
+        line-height: 1.25rem;
+        padding-left:1rem;
+        @include desktop {
+            padding-left: none;
+            line-height: 1.5rem;
+        }
+    }
+    &__user-image {
+        height: 2.5rem;
+        width: 2.5rem;
+        background: $color-light-sec;
+        border-radius: 50%;
+    }
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__name {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    &__date {
+        color: $color-light;
+        font-size: 0.8125rem;
+    }
+    
+}

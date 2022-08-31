@@ -1,0 +1,139 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    height: 30vh;
+    min-height: 11rem;
+    width: 100vw;
+    
+    @include tablet {
+        padding: 1rem 0 0;
+        min-height: 4rem;
+        height: 12vh;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100vw;
+        padding:0 3rem;
+    }
+    @include desktop {
+        max-width: $desktop-width;
+        width: 90%;
+        margin: 0 auto; //same as the other items left of nav bar
+    }
+    
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        width: 95vw;
+        justify-content: space-around;
+        align-items: flex-start;
+        @include tablet {
+            flex-direction: row;
+            width: 60vw;
+            justify-content: center;
+            align-items: center;
+        }
+        @include desktop {
+            width: 40vw;
+        }
+        
+    }
+    &__search{
+        display: flex;
+        height: 2.5rem;
+        width: 78vw;
+        border: 1px solid $color-light-sec;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: left;
+        padding-left: 1rem;
+        background-color: $color-accent-sec;
+        
+        &:hover {
+            border: 2px solid $color-dark2;
+        }
+        &:required {
+            border: 2px solid red;
+        }
+        @include tablet {
+            width: 90%;
+            margin: 0;
+        }
+        @include desktop {
+            width: 97%;
+        }
+        &--div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            @include tablet {
+                margin:0;
+                width: 40vw;
+                flex:auto;
+            }
+        }
+    }
+    &__logo {
+        margin: 0;
+        height: 2rem;
+        @include tablet {
+            height: 1.75rem;
+        }
+    }
+    &__button {
+        width: 95vw;
+        @include tablet {
+            width: 20vw;
+        }
+        @include desktop {
+            width:10rem;
+            margin: 0 2rem; //same as the other items left of nav bar
+        }
+        &--div{
+            width: 100%;
+            @include tablet {
+                width: 35%;
+            }
+        }
+        &--icon {
+            height: 1.5rem;
+            padding-right: 1.5rem
+        }
+    }
+    
+    &__user {
+        margin: 0;
+        border-radius: 50%;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-size: cover;//same as the other items left of nav bar
+        background-image: url('../../assets/Images/Mohan-muruge.jpg');
+        margin-left: 1rem;
+        @include tablet {
+            margin: 0 auto;
+            margin-left: 2rem;
+        }
+        @include desktop {
+            margin-left: 0;
+        }
+    }
+    &__userMobile {
+        margin: 0;
+        @include tablet {
+            display: none;
+        }
+    }
+    &__userTablet {
+        display: none;
+        @include tablet {
+            display: flex;
+        }
+    }
+    
+}

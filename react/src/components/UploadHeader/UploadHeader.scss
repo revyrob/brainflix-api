@@ -1,0 +1,42 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.upLoadHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 0 1rem;
+    @include tablet{
+        margin: 0 1rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $color-dark;
+        padding: 2rem 0;
+        font-weight: 700;
+        @include tablet {
+            font-weight: 700;
+            font-size: 2.0625rem;
+            border-bottom: 1px solid $color-light-sec;
+            padding: 2.5rem 0 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+    }
+    &__subtitle {
+        text-transform: uppercase;
+        color: $color-light;
+        font-size: 0.75rem;
+        padding-bottom: .5rem;
+    }
+    &__div {
+        display: flex;
+        justify-content: center;
+        @include tablet {
+            justify-content: flex-start;
+        }
+        
+    }
+}

@@ -1,0 +1,53 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.mobile {
+    display: flex;
+            justify-content: center;
+            align-items: left;
+            @include tablet {
+                display: none;
+            }
+}
+.tablet {
+    display: none;
+            @include tablet {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                height: 4rem;
+                display: flex;
+}
+}
+
+.commentArea {
+    width:100%;
+    &__numberComments {
+        margin-bottom: 1rem;
+        font-weight: 700;
+        font-size: 0.8125rem;
+        @include tablet {
+            margin-bottom:1rem;
+            font-size: 0.875rem;
+        }
+        @include desktop {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        color: $color-light;
+        margin-bottom: 1rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        margin-left: 3.5rem;
+        @include tablet {
+            margin-left: 9%;
+            font-size: 0.875rem;
+           }
+    
+    }
+   
+}

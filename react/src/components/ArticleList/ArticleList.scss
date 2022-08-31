@@ -1,0 +1,29 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.articleList {
+    padding: 1rem;
+    color: $color-light;
+    @include tablet {
+        border: none;
+        margin: 0 2rem;
+        width: 50%;
+    }
+    @include desktop {
+        padding-left: 1.5rem;
+        padding-top: 2rem;
+        border-left: 1px solid $color-light-sec;
+        margin: 0;
+        width: 40%;
+    }
+    &__title {
+        padding-bottom: 1rem;
+        font-weight: 600;
+        font-size: 0.75rem;
+        @include desktop {
+            margin-bottom: .25rem;
+            margin-top: 1rem;
+        }
+    }
+
+}

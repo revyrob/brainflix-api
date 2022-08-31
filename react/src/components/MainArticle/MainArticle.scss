@@ -1,0 +1,101 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.mainArticle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    color: $color-dark;
+    font-size: 0.8125rem;
+    @include tablet {
+        font-size: 0.875rem;
+    }
+    @include desktop {
+        margin-bottom: 3rem;
+    }
+    &__div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  
+        align-items: center;   
+        &--stats{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            justify-content: baseline;
+            align-items: flex-start;
+            @include tablet {
+                flex-direction: row;
+            }
+            @include tablet {
+                width: 30%;
+                justify-content: space-between;
+                align-items: center;
+            }
+            @include desktop {
+                width: 35%;
+            }
+        }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        @include tablet {
+            font-size: 2.0625rem;
+            margin: 2.5rem 0 1rem;
+        }
+    }
+    &__article{
+        margin-top: 1rem;
+        line-height: 1.125rem;
+        @include tablet {
+            padding-right: 1.5rem;
+            line-height: 1.375rem;
+        }
+    }
+    &__infoBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-top: 1px solid $color-light-sec;
+        border-bottom: 1px solid $color-light-sec;
+        margin-top: 1rem;
+        line-height: 1.5rem;
+        font-size: 0.8125rem;
+        @include tablet { 
+            border-top: none; 
+            padding-right: 1.5rem;
+            font-size: 0.875rem;
+            margin-top:0;
+        }
+            &__div{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                   
+            }
+            &--author{
+                font-weight: 700;
+              
+                @include desktop {
+                    margin: 1rem 0 1rem;
+                }
+            }
+            &--date{
+                color: $color-light;
+            }
+            &--emoji{
+                color: $color-light;
+                display: flex;
+                justify-content: center;
+                margin-left:.4rem;
+                
+            }
+                &--icon{
+                    height: 1.2rem;
+                    width: 1.2rem;
+                }
+            }
+        }

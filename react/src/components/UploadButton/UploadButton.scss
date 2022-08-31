@@ -1,0 +1,38 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.uploadButton__btn {
+    width: 100%;
+    margin-bottom: 1rem;
+    // @include desktop {
+        //     display: none;
+        // }
+        &--publish{
+            @extend .uploadButton__btn;
+            @include tablet{
+                width: 11.25rem;
+            }
+        }
+        &--cancel{
+            @extend .uploadButton__btn;
+            background-color: $color-accent;
+            color: $color-dark2;
+            padding-left: 24px;
+            @include tablet {
+                width: 11.25rem;
+            }
+            
+        }
+        &--div {
+            @include tablet {
+                display: flex;
+                flex-direction: row-reverse;
+                width: 50%;
+                margin-left: auto;
+                justify-content: stretch;
+            }
+            
+        }
+        
+    }
+    

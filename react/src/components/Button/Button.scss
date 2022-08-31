@@ -1,0 +1,27 @@
+@use '../../styles/partials/reset' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+button {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    background-color: $color-dark2;
+    color: $color-accent;
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: none;
+    padding-right: 24px;
+    font-weight: 600;
+    &:hover{
+        background-color: $color-dark2-sec;
+    }
+}
+.button-icon {
+    margin-right: auto;
+}
+.button-text {
+  margin-right: auto;
+}
+
+
