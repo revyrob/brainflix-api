@@ -39,45 +39,45 @@ router.get("/", (req, res) => {
 /*
  *Get single video by using id pararm
  */
-router.get("/:id", (req, res) => {
-  loadJokesData((err, videoData) => {
-    if (err) {
-      res.send("error getting jokes data");
-    } else {
-      const videos = JSON.parse(videoData);
-      const foundVideo = videos.find((video) => video.id == req.params.id);
-      res.json(foundVideo);
-    }
-  });
-});
+// router.get("/:id", (req, res) => {
+//   loadVideosData((err, videoData) => {
+//     if (err) {
+//       res.send("error getting video data");
+//     } else {
+//       const videos = JSON.parse(videoData);
+//       const foundVideo = videos.find((video) => video.id == req.params.id);
+//       res.json(foundVideo);
+//     }
+//   });
+// });
 
 /*
  *Post new upload
  */
-router.post("/", (req, res) => {
-  loadVideosData((err, videoData) => {
-    if (err) {
-      res.send("error posting video");
-    } else {
-      const parsedVideoData = JSON.parse(videoData);
+// router.post("/", (req, res) => {
+//   loadVideosData((err, videoData) => {
+//     if (err) {
+//       res.send("error posting video");
+//     } else {
+//       const parsedVideoData = JSON.parse(videoData);
 
-      //create a new video and push to array
-      const newVideo = {
-        id: uuidv4(),
-        image: "http://localhost:8080/images/hiker-mtns.jpg",
-        name: req.body.name,
-        comment: req.body.comment,
-        timestamp: Date.now(),
-      };
-      //push the new upload video to the json
-      parsedVideoData.push(newVideo);
+//       //create a new video and push to array
+//       const newVideo = {
+//         id: uuidv4(),
+//         image: "http://localhost:8080/images/hiker-mtns.jpg",
+//         name: req.body.name,
+//         comment: req.body.comment,
+//         timestamp: Date.now(),
+//       };
+//       //push the new upload video to the json
+//       parsedVideoData.push(newVideo);
 
-      //save the stringified data to the json file
-      saveVideoData(JSON.stringify(parsedVideoData));
+//       //save the stringified data to the json file
+//       saveVideoData(JSON.stringify(parsedVideoData));
 
-      res.status(201).send("upload video created");
-    }
-  });
-});
+//       res.status(201).send("upload video created");
+//     }
+//   });
+// });
 
 module.exports = router;
