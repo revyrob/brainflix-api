@@ -1,4 +1,5 @@
 import videoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+
 import "./UploadVid.scss";
 
 function UploadVid() {

@@ -21,7 +21,6 @@ function HomePage() {
       .get(`${REACT_APP_API_SERVER_URL}/videos`)
       .then((response) => {
         setVideoList(response.data);
-        console.log(response.data);
       })
       .catch((err) => console.log(err));
   };

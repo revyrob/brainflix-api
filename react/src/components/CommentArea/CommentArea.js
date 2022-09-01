@@ -2,6 +2,7 @@ import "./CommentArea.scss";
 import Comment from "../Comment/Comment";
 import FormFieldTablet from "../FormFieldTablet.js/FormFieldTablet";
 import FormField from "../FormField/FormField";
+const { v4: uuidv4 } = require("uuid");
 
 function CommentArea({ item }) {
   //tried to write a function to sort the order but of the timestamps but
@@ -19,7 +20,7 @@ function CommentArea({ item }) {
       {item.comments
         .map((user) => (
           <Comment
-            key={user.id}
+            key={uuidv4()}
             name={user.name}
             comment={user.comment}
             likes={user.likes}

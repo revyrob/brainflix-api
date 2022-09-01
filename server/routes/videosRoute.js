@@ -54,30 +54,44 @@ router.get("/:id", (req, res) => {
 /*
  *Post new upload
  */
-// router.post("/", (req, res) => {
-//   loadVideosData((err, videoData) => {
-//     if (err) {
-//       res.send("error posting video");
-//     } else {
-//       const parsedVideoData = JSON.parse(videoData);
+router.post("/", (req, res) => {
+  loadVideosData((err, videoData) => {
+    if (err) {
+      res.send("error posting video");
+    } else {
+      const parsedVideoData = JSON.parse(videoData);
 
-//       //create a new video and push to array
-//       const newVideo = {
-//         id: uuidv4(),
-//         image: "http://localhost:8080/images/hiker-mtns.jpg",
-//         name: req.body.name,
-//         comment: req.body.comment,
-//         timestamp: Date.now(),
-//       };
-//       //push the new upload video to the json
-//       parsedVideoData.push(newVideo);
+      //create a new video and push to array
+      const newVideo = {
+        id: uuidv4(),
+        title: req.body.title,
+        channel: "Brainstation",
+        image: "http://localhost:8080/images/hiker-mtns.jpg",
+        description: req.body.comment,
+        views: "0",
+        likes: "0",
+        duration: "0.31",
+        video: "https://project-2-api.herokuapp.com/stream",
+        timestamp: Date.now(),
+        comments: [
+          {
+            id: uuidv4(),
+            name: req.body.name,
+            comment: req.body.comment,
+            likes: "0",
+            timestamp: Date.now(),
+          },
+        ],
+      };
+      //push the new upload video to the json
+      parsedVideoData.push(newVideo);
 
-//       //save the stringified data to the json file
-//       saveVideoData(JSON.stringify(parsedVideoData));
+      //save the stringified data to the json file
+      saveVideoData(JSON.stringify(parsedVideoData));
 
-//       res.status(201).send("upload video created");
-//     }
-//   });
-// });
+      res.status(201).send("upload video created");
+    }
+  });
+});
 
 module.exports = router;
