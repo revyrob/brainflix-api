@@ -54,6 +54,7 @@ router.get("/:id", (req, res) => {
 /*
  *Post new upload
  */
+
 router.post("/", (req, res) => {
   loadVideosData((err, videoData) => {
     if (err) {
@@ -63,25 +64,25 @@ router.post("/", (req, res) => {
 
       //create a new video and push to array
       const newVideo = {
-        id: uuidv4(),
         title: req.body.title,
-        channel: "Brainstation",
+        channel: "Ada Lovelace",
         image: "http://localhost:8080/images/hiker-mtns.jpg",
-        description: req.body.comment,
+        description: req.body.description,
         views: "0",
         likes: "0",
         duration: "0.31",
         video: "https://project-2-api.herokuapp.com/stream",
         timestamp: Date.now(),
         comments: [
-          {
-            id: uuidv4(),
-            name: req.body.name,
-            comment: req.body.comment,
-            likes: "0",
-            timestamp: Date.now(),
-          },
+          // {
+          //   id: uuidv4(),
+          //   name: req.body.name,
+          //   comment: req.body.comment,
+          //   likes: "0",
+          //   timestamp: Date.now(),
+          // },
         ],
+        id: uuidv4(),
       };
       //push the new upload video to the json
       parsedVideoData.push(newVideo);
@@ -90,6 +91,35 @@ router.post("/", (req, res) => {
       saveVideoData(JSON.stringify(parsedVideoData));
 
       res.status(201).send("upload video created");
+    }
+  });
+});
+
+/*
+ *Post new comment
+ */
+router.post("/:id/comments", (req, res) => {
+  loadVideosData((err, videoData) => {
+    if (err) {
+      res.send("error posting comment");
+    } else {
+      const parsedVideoData = JSON.parse(videoData);
+
+      //create a new video and push to array
+      const newComment = {
+        id: uuidv4(),
+        name: req.body.name,
+        comment: req.body.comment,
+        likes: "0",
+        timestamp: Date.now(),
+      };
+      //push the new upload video to the json
+      parsedVideoData.push(newVideo);
+
+      //save the stringified data to the json file
+      saveCommentData(JSON.stringify(parsedCommentData));
+
+      res.status(201).send("upload comment created");
     }
   });
 });
