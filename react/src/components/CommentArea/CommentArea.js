@@ -11,7 +11,7 @@ function CommentArea({ item }) {
   return (
     <section className="commentArea">
       <p className="commentArea__numberComments">
-        {item.comments.length} Comments
+        {item.comments.length === 0 ? "0" : item.comments.length} Comments
       </p>
       <h2 className="commentArea__title">Join the Conversation</h2>
       <FormField className="mobile" item={item} />

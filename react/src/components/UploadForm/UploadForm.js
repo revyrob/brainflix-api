@@ -2,7 +2,7 @@ import "./UploadForm.scss";
 import Button from "../Button/Button";
 import publish from "../../assets/Icons/publish.svg";
 import axios from "axios";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function UploadForm() {
   const { REACT_APP_API_SERVER_URL } = process.env;

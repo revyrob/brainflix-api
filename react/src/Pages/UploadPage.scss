@@ -1,0 +1,239 @@
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+
+//all css for Upload page
+.uploadButton__btn {
+    width: 100%;
+    margin-bottom: 1rem;
+    // @include desktop {
+        //     display: none;
+        // }
+        &--publish{
+            @extend .uploadButton__btn;
+            @include tablet{
+                width: 11.25rem;
+            }
+        }
+        &--cancel{
+            @extend .uploadButton__btn;
+            background-color: $color-accent;
+            color: $color-dark2;
+            padding-left: 24px;
+            @include tablet {
+                width: 11.25rem;
+            }
+            
+        }
+        &--div {
+            @include tablet {
+                display: flex;
+                flex-direction: row-reverse;
+                width: 50%;
+                margin-left: auto;
+                justify-content: stretch;
+            }
+            
+        }
+        
+    }
+    .uploadForm {
+      margin: 1rem 1rem 0;
+      @include desktop {
+        //   margin-top: 2rem;
+          width: 75%;
+          height: 100%;
+      }
+      &__label{
+          color: $color-light;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          font-weight: 600;
+          @include tablet {
+              margin-bottom: 1rem;
+          }
+          @include desktop {
+              border: none;
+              height: 2.5rem;
+              margin: 1rem 0;
+          }
+          
+      }
+      &__textarea{
+          color: $color-dark-sec;
+          font-family: $font-primary;
+          font-size: 0.8125rem;
+          width: 100%;
+          border: 1px solid $color-light-sec;
+          border-radius: 4px;
+          height: 6rem;
+          margin-bottom: 1rem;
+          margin-top: .25rem;
+          background-color: $color-accent-sec;
+          resize: none;
+          &:focus {
+              border: 2px solid $color-dark2;
+          }
+          &:required {
+              border: 2px solid red;
+          }
+          @include tablet {
+              height: 6rem;
+              padding-bottom: 2rem;
+              margin-bottom: 1.5rem;
+              font-size: 0.875rem;
+          }
+          @include desktop {
+              align-items: center;
+              justify-content: left;
+              padding-left: 1rem;
+              width: 100%;
+              margin-bottom: 1rem;
+              margin-top: 0.25rem;
+              height: 8rem;
+          }   
+      }
+      &__input{
+          color: $color-dark-sec;
+          font-family: $font-primary;
+          font-size: 0.8125rem;
+          width: 100%;
+          border: 1px solid $color-light-sec;
+          border-radius: 4px;
+          height: 2.5rem;
+          margin-bottom: 1.5rem;
+          margin-top: .25rem;
+          background-color: $color-accent-sec;
+          &:focus {
+              border: 2px solid $color-dark2;
+          }
+          &:required {
+              border: 2px solid red;
+          }
+          @include tablet {
+              height: 2.5rem;
+              font-size: 0.875rem;
+              
+          }
+          @include desktop {
+              align-items: center;
+              justify-content: left;
+              padding-left: 1rem;
+              width: 100%;
+              margin-bottom: 2rem;
+            //   margin-top: 0.25rem;
+              height: 3rem;
+          }
+        //   &__btn {
+        //       @include desktop {
+        //           display: none;
+        //       }
+        //   }
+          
+      }
+      &__btn {
+          width: 100%;
+          margin-bottom: 1rem;
+          
+          &--publish{
+              @extend .uploadForm__btn;
+              @include tablet{
+                  width: 11.25rem;
+              }
+          }
+          &--cancel{
+              @extend .uploadForm__btn;
+              background-color: $color-accent;
+              color: $color-dark2;
+              padding-left: 24px;
+              @include tablet {
+                  width: 11.25rem;
+              }
+              
+          }
+          &--div {
+              @include tablet {
+                  display: flex;
+                  flex-direction: row-reverse;
+                  width: 50%;
+                  margin-left: auto;
+                  justify-content: stretch;
+              }
+            //   @include desktop {
+            //       display: none;
+                  
+            //   }
+          }
+          
+      }
+      
+      
+      
+  }
+  .grey-line {
+      display: none;
+      @include tablet {
+          display: flex;
+          border-top: 1px solid $color-light-sec;
+          width: 100%;
+          height: 1px;
+          padding-top: 1rem;
+      }
+      @include desktop {
+          display: none;
+      }
+  }
+  .upload{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 0 1rem;
+    @include tablet{
+        margin: 0 1rem;
+    }
+    @include desktop {
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+    &__subtitle {
+        text-transform: uppercase;
+        color: $color-light;
+        font-size: 0.75rem;
+        padding-bottom: .5rem;
+        font-weight: 600;
+    }
+    &__div {
+        display: flex;
+        justify-content: center;
+        @include tablet {
+            justify-content: flex-start;
+        }
+        // @include desktop {
+        //     margin-top: 1rem;
+        // }
+        
+    }
+    &__img {
+        background-color: $color-light-sec;
+        height: 50vw;
+        width: 100%;
+        border-radius: 4px;
+        align-items: center;
+        @include tablet {
+            width: 50%;
+            height: 23vw;
+        }
+        @include desktop {
+            height: 17vw;
+            width: 100%;
+        }
+    }
+  }
+  .greyLine{
+    border-top: 1px solid $color-light-sec;
+    margin: 0;
+    @include desktop {
+        border-top: none;
+    }
+    
+  }
