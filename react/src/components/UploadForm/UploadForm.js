@@ -2,11 +2,12 @@ import "./UploadForm.scss";
 import Button from "../Button/Button";
 import publish from "../../assets/Icons/publish.svg";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 function UploadForm() {
   const { REACT_APP_API_SERVER_URL } = process.env;
   let navigate = useNavigate();
+
   //event handler for uploading
   const handleUpload = (event) => {
     event.preventDefault();
@@ -19,6 +20,7 @@ function UploadForm() {
         description: description,
       })
       .then((response) => {
+        console.log(response);
         if (title !== "" && description !== "") {
           alert("Video uploaded");
           navigate("/");
@@ -34,11 +36,20 @@ function UploadForm() {
     alert("You have cancelled the upload");
   };
 
+  //make button outside of form using
+  //id on form 'id='class of form'
+  //link the button to the form using
+  //'form='id-name of the form'
   //figure out how to get the cancel button to use the handleCancel
   return (
-    <form method="post" className="uploadForm" onSubmit={handleUpload}>
+    <form
+      method="post"
+      className="uploadForm"
+      id="form-upload"
+      onSubmit={handleUpload}
+    >
       <label className="uploadForm__label">
-        Title your video
+        Title of your video
         <input
           type="text"
           placeholder="Add a title to your video"
@@ -58,18 +69,18 @@ function UploadForm() {
       <div className="grey-line"></div>
       <div className="uploadForm__btn--div">
         <Button
+          form="form-upload"
           className="uploadForm__btn--publish"
           icon={publish}
           alt="upload"
           text="PUBLISH"
           type="submit"
         />
-
         <Button
-          onClick={handleCancel}
+          makeHappen={handleCancel}
           className="uploadForm__btn--cancel"
           text="CANCEL"
-          type="cancel"
+          type="button"
         />
       </div>
     </form>
