@@ -24,13 +24,20 @@ function saveVideoData(data) {
 
 /*
  *Get all the videos
+ *I would think it would be in here where I change the data taken
+ *in from the larger file
  */
 router.get("/", (req, res) => {
   loadVideosData((err, data) => {
+    console.log(data);
     if (err) {
       res.send("error while getting video data");
     } else {
       const videos = JSON.parse(data);
+
+      //loop throug the data just taking the
+      //information that is used for the small json
+      //title, image, channgel, id
       res.json(videos);
     }
   });
@@ -54,7 +61,6 @@ router.get("/:id", (req, res) => {
 /*
  *Post new upload
  */
-
 router.post("/", (req, res) => {
   loadVideosData((err, videoData) => {
     if (err) {
