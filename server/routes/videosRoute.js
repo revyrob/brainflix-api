@@ -29,15 +29,20 @@ function saveVideoData(data) {
  */
 router.get("/", (req, res) => {
   loadVideosData((err, data) => {
-    console.log(data);
     if (err) {
       res.send("error while getting video data");
-    } else {
-      const videos = JSON.parse(data);
-
       //loop throug the data just taking the
       //information that is used for the small json
       //title, image, channgel, id
+    } else {
+      const videos = JSON.parse(data).map((e) => {
+        return {
+          title: e.title,
+          channel: e.channel,
+          image: e.image,
+          id: e.id,
+        };
+      });
       res.json(videos);
     }
   });
@@ -79,15 +84,7 @@ router.post("/", (req, res) => {
         duration: "0.31",
         video: "https://project-2-api.herokuapp.com/stream",
         timestamp: Date.now(),
-        comments: [
-          // {
-          //   id: uuidv4(),
-          //   name: req.body.name,
-          //   comment: req.body.comment,
-          //   likes: "0",
-          //   timestamp: Date.now(),
-          // },
-        ],
+        comments: [],
         id: uuidv4(),
       };
       //push the new upload video to the json
@@ -109,23 +106,33 @@ router.post("/:id/comments", (req, res) => {
     if (err) {
       res.send("error posting comment");
     } else {
-      const parsedVideoData = JSON.parse(videoData);
+      const videos = JSON.parse(videoData);
+      const foundVideo = videos.find((video) => video.id == req.params.id);
+
+      //go through the list and add the comment to the matching id
+      //we found the matching id in the compare for find main
+      //now do the same find the main id
+      //add object to the end of the array of comments
+      // const videos = JSON.parse(videoData);
+      // const foundVideo = videos.find((video) => video.id == req.params.id);
 
       //create a new video and push to array
       const newComment = {
         id: uuidv4(),
-        name: req.body.name,
+        name: "Ada Lovelace",
         comment: req.body.comment,
         likes: "0",
         timestamp: Date.now(),
       };
-      //push the new upload video to the json
-      parsedVideoData.push(newVideo);
 
-      //save the stringified data to the json file
-      saveCommentData(JSON.stringify(parsedCommentData));
-
-      res.status(201).send("upload comment created");
+      // //i need to push my comment to the object video in the array
+      // //of objects
+      foundVideo.comments.push(newComment);
+      // console.log(foundVideo);
+      // //save the stringified data to the json file
+      // saveVideoData(JSON.stringify(foundVideo));
+      res.json(foundVideo);
+      // res.status(201).send("upload comment created");
     }
   });
 });

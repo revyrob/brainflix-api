@@ -16,7 +16,6 @@ function UploadPage() {
     event.preventDefault();
     const title = event.target.title.value;
     const description = event.target.description.value;
-    console.log(description);
 
     axios
       .post(`http://localhost:8080/videos`, {
@@ -24,7 +23,6 @@ function UploadPage() {
         description: description,
       })
       .then((response) => {
-        console.log(response);
         if (title !== "" && description !== "") {
           alert("Video uploaded");
           navigate("/");
