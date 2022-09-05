@@ -5,9 +5,6 @@
 .uploadButton__btn {
     width: 100%;
     margin-bottom: 1rem;
-    // @include desktop {
-        //     display: none;
-        // }
         &--publish{
             @extend .uploadButton__btn;
             @include tablet{
@@ -39,7 +36,6 @@
     .uploadForm {
       margin: 1rem 1rem 0;
       @include desktop {
-        //   margin-top: 2rem;
           width: 75%;
           height: 100%;
       }
@@ -87,9 +83,10 @@
               justify-content: left;
               padding-left: 1rem;
               width: 100%;
-              margin-bottom: 1rem;
+              margin-bottom: 2rem;
               margin-top: 0.25rem;
               height: 8rem;
+              border-bottom: 1px solid $color-light-sec;
           }   
       }
       &__input{
@@ -120,15 +117,8 @@
               padding-left: 1rem;
               width: 100%;
               margin-bottom: 2rem;
-            //   margin-top: 0.25rem;
               height: 3rem;
           }
-        //   &__btn {
-        //       @include desktop {
-        //           display: none;
-        //       }
-        //   }
-          
       }
       &__btn {
           width: 100%;
@@ -158,16 +148,10 @@
                   margin-left: auto;
                   justify-content: stretch;
               }
-            //   @include desktop {
-            //       display: none;
-                  
-            //   }
           }
           
       }
-      
-      
-      
+     
   }
   .grey-line {
       display: none;
@@ -179,7 +163,12 @@
           padding-top: 1rem;
       }
       @include desktop {
-          display: none;
+        padding-top: 2rem;
+        position: relative;
+        border-top: 1px solid $color-light-sec;
+        top: 0%;
+        left: -55%;
+        width: 155%;
       }
   }
   .upload{
@@ -194,6 +183,9 @@
     @include desktop {
         justify-content: flex-start;
         margin-top: 1rem;
+        // border-bottom: 1px solid $color-light-sec;
+        
+
     }
     &__subtitle {
         text-transform: uppercase;
@@ -208,10 +200,7 @@
         @include tablet {
             justify-content: flex-start;
         }
-        // @include desktop {
-        //     margin-top: 1rem;
-        // }
-        
+       
     }
     &__img {
         background-color: $color-light-sec;
@@ -224,16 +213,16 @@
             height: 23vw;
         }
         @include desktop {
-            height: 17vw;
+            height: 14rem;
             width: 100%;
         }
     }
   }
-  .greyLine{
-    border-top: 1px solid $color-light-sec;
-    margin: 0;
-    @include desktop {
-        border-top: none;
-    }
+//   .greyLine{
+//     border-top: 1px solid $color-light-sec;
+//     margin: 0;
+//     @include desktop {
+//         border-top: none;
+//     }
     
-  }
+//   }

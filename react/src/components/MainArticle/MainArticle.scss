@@ -33,7 +33,7 @@
                 align-items: center;
             }
             @include desktop {
-                width: 35%;
+                width: 25%;
             }
         }
     }
@@ -90,12 +90,13 @@
                 color: $color-light;
                 display: flex;
                 justify-content: center;
-                margin-left:.4rem;
+                margin-left:.4rem;           
                 
             }
                 &--icon{
                     height: 1.2rem;
                     width: 1.2rem;
+                 
                 }
             }
         }

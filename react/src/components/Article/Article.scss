@@ -37,7 +37,10 @@
         @include tablet {
             height: 70%;
             justify-content: center;
-            
+        }
+        @include desktop {
+            height: 85%;
+            justify-content: space-between;
         }
         &--title {
             font-weight: 700;
@@ -47,6 +50,7 @@
            }
             @include desktop {
             font-size: 0.875rem;
+            margin-top: 0;
             }
         }
         &--author {

@@ -5,9 +5,6 @@ import FormField from "../FormField/FormField";
 const { v4: uuidv4 } = require("uuid");
 
 function CommentArea({ item }) {
-  //tried to write a function to sort the order but of the timestamps but
-  //didn't work...
-
   return (
     <section className="commentArea">
       <p className="commentArea__numberComments">
@@ -17,19 +14,21 @@ function CommentArea({ item }) {
       <FormField className="mobile" item={item} />
       <FormFieldTablet className="tablet" item={item} />
 
-      {item.comments
-        .map((user) => (
+      {
+        item.comments.map((user, index) => (
           <Comment
-            key={uuidv4()}
+            id={uuidv4()}
+            key={index}
             name={user.name}
             comment={user.comment}
             likes={user.likes}
             timestamp={user.timestamp}
           />
         ))
-        .sort(function (x, y) {
-          return x.timestamp - y.timestamp;
-        })}
+        // .sort(function (x, y) {
+        //   return x.timestamp - y.timestamp;
+        // })
+      }
     </section>
   );
 }

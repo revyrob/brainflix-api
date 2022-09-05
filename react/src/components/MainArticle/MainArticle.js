@@ -24,9 +24,9 @@ function MainArticle({ item }) {
           </div>
           <div className="mainArticle__infoBar__div">
             <img
-              className="mainArticle__infoBar--icon"
+              className="mainArticle__infoBar--icon hover-icon"
               src={likes}
-              alt="view icon"
+              alt="like icon"
             />
             <p className="mainArticle__infoBar--emoji"> {item.likes}</p>
           </div>

@@ -14,28 +14,31 @@ function FormFieldTablet({ item }) {
   /*
    *event listener which pushes to the online API
    */
-
-  const commentHandler = (event) => {
+  const handleComment = (event) => {
     event.preventDefault();
-    axios({
-      method: "post",
-      url: `https://project-2-api.herokuapp.com/videos/${item.id}/comments?api_key=be97841f-2e0f-41ab-8584-cf3c3e4b26a9/`,
-      data: {
-        name: "Ada Lovelace",
-        comment: event.target.comment.value,
-      },
-    }).catch((err) => {
-      console.error(err);
-    });
+    const comment = event.target.comment.value;
+    axios
+      .post(`http://localhost:8080/videos/${item.id}/comments`, {
+        comment: comment,
+      })
+      .then((response) => {
+        if (comment !== "") {
+          alert("Thanks for commenting!");
+        } else {
+          alert("You have not filled out the required input.");
+        }
+      })
+      .catch((err) => console.log(err));
     setTimeout(() => {
       refreshPage();
     }, "500");
   };
+
   return (
     <form
       method="post"
       className="formField__wrapper--tablet"
-      onSubmit={commentHandler}
+      onSubmit={handleComment}
     >
       <div className="formField__user--div">
         <div className="formField__user"></div>

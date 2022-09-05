@@ -107,32 +107,50 @@ router.post("/:id/comments", (req, res) => {
       res.send("error posting comment");
     } else {
       const videos = JSON.parse(videoData);
-      const foundVideo = videos.find((video) => video.id == req.params.id);
-
-      //go through the list and add the comment to the matching id
-      //we found the matching id in the compare for find main
-      //now do the same find the main id
-      //add object to the end of the array of comments
-      // const videos = JSON.parse(videoData);
-      // const foundVideo = videos.find((video) => video.id == req.params.id);
 
       //create a new video and push to array
       const newComment = {
-        id: uuidv4(),
+        commentId: uuidv4(),
         name: "Ada Lovelace",
         comment: req.body.comment,
         likes: "0",
         timestamp: Date.now(),
       };
 
-      // //i need to push my comment to the object video in the array
-      // //of objects
-      foundVideo.comments.push(newComment);
-      // console.log(foundVideo);
-      // //save the stringified data to the json file
-      // saveVideoData(JSON.stringify(foundVideo));
-      res.json(foundVideo);
+      //if foreah equals that id
+      videos.forEach(({ comments, id }) => {
+        if (id == req.params.id) {
+          comments.unshift(newComment);
+        }
+      });
+
+      saveVideoData(JSON.stringify(videos));
+      res.json(videos);
       // res.status(201).send("upload comment created");
+    }
+  });
+});
+
+/*
+ *Delete a comment
+ */
+router.delete("/:id/comments/:commentId", (req, res) => {
+  loadVideosData((err, videoData) => {
+    if (err) {
+      res.send("error posting comment");
+    } else {
+      const videos = JSON.parse(videoData);
+      videos.forEach(({ commentId, comments }) => {
+        if (commentId == req.params.commentId) {
+          comments.slice(commentId, 1);
+        } else {
+          console.log("error");
+        }
+      });
+      saveVideoData(JSON.stringify(videos));
+      res.json(videos);
+
+      res.status(201).send("upload comment created");
     }
   });
 });
