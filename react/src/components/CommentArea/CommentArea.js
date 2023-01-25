@@ -14,21 +14,16 @@ function CommentArea({ item }) {
       <FormField className="mobile" item={item} />
       <FormFieldTablet className="tablet" item={item} />
 
-      {
-        item.comments.map((user, index) => (
-          <Comment
-            id={uuidv4()}
-            key={index}
-            name={user.name}
-            comment={user.comment}
-            likes={user.likes}
-            timestamp={user.timestamp}
-          />
-        ))
-        // .sort(function (x, y) {
-        //   return x.timestamp - y.timestamp;
-        // })
-      }
+      {item.comments.map((user, index) => (
+        <Comment
+          id={uuidv4()}
+          key={index}
+          name={user.name}
+          comment={user.comment}
+          likes={user.likes}
+          timestamp={user.timestamp}
+        />
+      ))}
     </section>
   );
 }

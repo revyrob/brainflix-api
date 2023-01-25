@@ -67,6 +67,7 @@ router.get("/:id", (req, res) => {
  *Post new upload
  */
 router.post("/", (req, res) => {
+  console.log(req.body);
   loadVideosData((err, videoData) => {
     if (err) {
       res.send("error posting video");
@@ -135,6 +136,7 @@ router.post("/:id/comments", (req, res) => {
  *Delete a comment
  */
 router.delete("/:id/comments/:commentId", (req, res) => {
+  console.log("params", req);
   loadVideosData((err, videoData) => {
     if (err) {
       res.send("error posting comment");

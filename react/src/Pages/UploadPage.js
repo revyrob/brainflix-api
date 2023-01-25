@@ -8,7 +8,7 @@ import videoThumbnail from "../assets/Images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
 
 function UploadPage() {
-  // const { REACT_APP_API_SERVER_URL } = process.env;
+  const { REACT_APP_API_SERVER_URL } = process.env;
   let navigate = useNavigate();
 
   //event handler for uploading
@@ -18,7 +18,7 @@ function UploadPage() {
     const description = event.target.description.value;
 
     axios
-      .post(`http://localhost:8080/videos`, {
+      .post(`${REACT_APP_API_SERVER_URL}/videos`, {
         title: title,
         description: description,
       })

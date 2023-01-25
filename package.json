@@ -1,0 +1,25 @@
+{
+  "name": "kayle-robson-brainflix-api",
+  "version": "1.0.0",
+  "description": "full stack application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd react && npm start",
+    "server": "cd server && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revyrob/brainflix-api.git"
+  },
+  "author": "kayle robson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/revyrob/brainflix-api/issues"
+  },
+  "homepage": "https://github.com/revyrob/brainflix-api#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

@@ -6,6 +6,7 @@ import axios from "axios";
 //form field for the mobile divice sine the input and button are in a different order
 //compared to the tablet/desktop
 function formField({ item }) {
+  const { REACT_APP_API_SERVER_URL } = process.env;
   //refresh page function
   const refreshPage = () => {
     window.location.reload();
@@ -15,7 +16,7 @@ function formField({ item }) {
     event.preventDefault();
     const comment = event.target.comment.value;
     axios
-      .post(`http://localhost:8080/videos/${item.id}/comments`, {
+      .post(`${REACT_APP_API_SERVER_URL}/videos/${item.id}/comments`, {
         comment: comment,
       })
       .then((response) => {

@@ -235,20 +235,6 @@
         "timestamp": 1631892222000,
         "comments": [
             {
-                "commentId": "6acec1f8-8b5c-43dd-96bc-cf74278ae9c3",
-                "name": "Ada Lovelace",
-                "comment": "But this feature works!!",
-                "likes": "0",
-                "timestamp": 1662340650221
-            },
-            {
-                "commentId": "01532ecc-c59e-4f7c-a9ce-5388b24aa024",
-                "name": "Ada Lovelace",
-                "comment": "This also blew my mind!!",
-                "likes": "0",
-                "timestamp": 1662330661996
-            },
-            {
                 "name": "Jesse Cruz",
                 "comment": "There’s no place quite like the open ocean. Wind in your sails. The cool mist is perfect to wake you up in the morning and lull you to sleep in the evening. What an experience.",
                 "likes": 0,
@@ -288,26 +274,5 @@
             }
         ],
         "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3"
-    },
-    {
-        "title": "Hiking in France",
-        "channel": "Ada Lovelace",
-        "image": "http://localhost:8080/images/hiker-mtns.jpg",
-        "description": " is a name that you have given to the argument passed to setState callback function. What it holds is the value of state before the setState was triggered by React; Since setState does batching, its sometimes important to know what the previous state was when you want to update the new state based on the previous state value.\n\nSo if multiple setState calls are updating the same state, batching setState calls may lead to incorrect state being set. Consider an example:",
-        "views": "0",
-        "likes": "0",
-        "duration": "0.31",
-        "video": "https://project-2-api.herokuapp.com/stream",
-        "timestamp": 1662340705631,
-        "comments": [
-            {
-                "commentId": "1f2695f4-b2da-43ac-b81b-9d4a0817cdd3",
-                "name": "Ada Lovelace",
-                "comment": "This is amazing",
-                "likes": "0",
-                "timestamp": 1662340718354
-            }
-        ],
-        "id": "46034164-3990-42e6-8f2c-4660acdd3b5d"
     }
 ]

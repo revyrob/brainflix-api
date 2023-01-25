@@ -2,6 +2,7 @@ import "./Comment.scss";
 import { Link } from "react-router-dom";
 
 function Comment({ timestamp, name, comment, id, commentId }) {
+  // const { REACT_APP_API_SERVER_URL } = process.env;
   //reload page function
   // const refreshPage = () => {
   //   window.location.reload();
@@ -25,7 +26,7 @@ function Comment({ timestamp, name, comment, id, commentId }) {
     // console.log(commentId);
     alert("We are still working on this feature");
     // axios
-    //   .delete(`http://localhost:8080/videos/${id}/comments/${comments.commentId}`)
+    //   .delete(${REACT_APP_API_SERVER_URL}/videos/${id}/comments/${comments.commentId}`)
     //   .then((response) => {
     //     console.log("click event happend");
     //     console.log(id.commentId);

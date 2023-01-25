@@ -69,6 +69,9 @@
           &:focus {
               border: 2px solid $color-dark2;
           }
+        //   &:hover {
+        //     border: 2px solid $color-dark2;
+        // }
           &:required {
               border: 2px solid red;
           }
@@ -167,8 +170,8 @@
         position: relative;
         border-top: 1px solid $color-light-sec;
         top: 0%;
-        left: -55%;
-        width: 155%;
+        left: -56%;
+        width: 156%;
       }
   }
   .upload{
@@ -218,6 +221,7 @@
         }
     }
   }
+  
 //   .greyLine{
 //     border-top: 1px solid $color-light-sec;
 //     margin: 0;

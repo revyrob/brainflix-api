@@ -15,5 +15,5 @@ app.get("/videos", function (req, res) {
 });
 
 app.listen(PORT, function () {
-  console.log("Hello our server is up and running");
+  console.log("Hello our server is up and running on 8080");
 });
