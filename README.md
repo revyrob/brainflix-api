@@ -1,9 +1,12 @@
 # 👩‍💻 Brainflix  
-Personnel portfolio, displaying my projects and a summary of myself.  Built with React and React-dom.  I enjoyed learning P5 to create the following matrix affect with the letters in my name.  I also created a looping flicker with my name.  I did have a bit of problem with resetting the banner when the page was resized but I did solve it.  I used MUI, Framer-motion, Formik, and Toastify libraries.  I used SASS for the styling and stuck to the BEM convention.  
+Brainflix was my first full stack project which I created with React, Express, and Axios.  We created endpoints to Create, Read, and Delete.  A user can upload a photo with a title and a description.  A user can add comments to the new posts created.  
+Responsive in mobile, tablet, and desktop.
 
 ## 🚀 Demo
 
 ## 📸 Images
+![image](https://user-images.githubusercontent.com/66695865/188357756-58872a36-76a4-419f-991f-6b277638aac1.png)
+![image](https://user-images.githubusercontent.com/66695865/188357798-6f6cf8f1-1202-4fcb-855b-eef67a1311db.png)
 
 ## 💻 Built with
 <li>React</li>
@@ -28,8 +31,6 @@ Personnel portfolio, displaying my projects and a summary of myself.  Built with
     npm run dev
     
 
-## 🔮 Future Plans for Portfolio
 
-<li>Create and add more projects!!</li>
 
 
