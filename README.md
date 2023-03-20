@@ -28,7 +28,16 @@ Responsive in mobile, tablet, and desktop.
 
     npm i
 
-3. Run the frontend with the following command in the folder:
+3. cd into each folder (react and server) and run npm install within each folder to install all the dependencies for the frontend and backend.
+
+    cd react
+    npm i
+    ..cd
+    cd server
+    npm i
+    ..cd
+    
+4.  Navigate back to the root folder so that you can and run npm run dev to start the frontend and backend simultaneously.
 
     npm run dev
     
